@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RemZona - Ремонт АКПП в Краснодаре | Современный сервис</title>
@@ -144,8 +145,12 @@
 <div class="input-group">
     <select id="heroService">
         <option value="">Выберите услугу</option>
+        <option>Замена масла в АКПП</option>
+        <option>Ремонт роботизированных КПП</option>
+        <option>Ремонт коробок DSG</option>
+        <option>Ремонт АКПП</option>
+        <option>Ремонт вариаторов (CVT)</option>
         <option>Диагностика</option>
-        <option>Замена масла АКПП</option>
         <option>Адаптация сцепления WAG</option>
         <option>Замена АКПП</option>
     </select>
@@ -179,11 +184,81 @@
         
         <div class="services-grid">
             <div class="service-card" data-aos="fade-up">
+                <div class="service-icon gradient-2">
+                    <i class="fas fa-oil-can"></i>
+                </div>
+                <h3>Замена масла в АКПП</h3>
+                <p>Полная или частичная замена трансмиссионной жидкости с фильтром</p>
+                <div class="service-footer">
+                    <span class="price">от 1 500 ₽</span>
+                    <button class="service-link" onclick="openModal('Замена масла в АКПП')">
+                        Записаться <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon gradient-5">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Ремонт роботизированных КПП</h3>
+                <p>Ремонт и настройка роботизированных коробок передач</p>
+                <div class="service-footer">
+                    <span class="price">от 40 000 ₽</span>
+                    <button class="service-link" onclick="openModal('Ремонт роботизированных КПП')">
+                        Записаться <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon gradient-3">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <h3>Ремонт коробок DSG</h3>
+                <p>Специализированный ремонт коробок DSG с гарантией</p>
+                <div class="service-footer">
+                    <span class="price">от 50 000 ₽</span>
+                    <button class="service-link" onclick="openModal('Ремонт коробок DSG')">
+                        Записаться <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="service-icon gradient-1">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Ремонт АКПП</h3>
+                <p>Капитальный ремонт автоматических коробок передач</p>
+                <div class="service-footer">
+                    <span class="price">от 30 000 ₽</span>
+                    <button class="service-link" onclick="openModal('Ремонт АКПП')">
+                        Записаться <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon gradient-4">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <h3>Ремонт вариаторов (CVT)</h3>
+                <p>Ремонт и обслуживание вариаторных коробок передач</p>
+                <div class="service-footer">
+                    <span class="price">от 35 000 ₽</span>
+                    <button class="service-link" onclick="openModal('Ремонт вариаторов (CVT)')">
+                        Записаться <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-icon gradient-6">
                     <i class="fas fa-microscope"></i>
                 </div>
                 <h3>Диагностика</h3>
-                <p>Компьютерная диагностика АКПП с использованием профессионального оборудования</p>
+                <p>Компьютерная диагностика АКПП с профессиональным оборудованием</p>
                 <div class="service-footer">
                     <span class="price">от 1 000 ₽</span>
                     <button class="service-link" onclick="openModal('Диагностика')">
@@ -192,24 +267,9 @@
                 </div>
             </div>
             
-            <div class="service-card featured" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-icon gradient-2">
-                    <i class="fas fa-oil-can"></i>
-                </div>
-                <h3>Замена масла АКПП</h3>
-                <p>Полная или частичная замена трансмиссионной жидкости с фильтром</p>
-                <div class="service-footer">
-                    <span class="price">от 1 500 ₽</span>
-                    <button class="service-link" onclick="openModal('Замена масла АКПП')">
-                        Записаться <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>
-                <span class="featured-badge">Популярно</span>
-            </div>
-            
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-icon gradient-3">
-                    <i class="fas fa-sync-alt"></i>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="service-icon gradient-5">
+                    <i class="fas fa-sliders-h"></i>
                 </div>
                 <h3>Адаптация сцепления WAG</h3>
                 <p>Профессиональная адаптация сцепления для роботизированных коробок</p>
@@ -221,9 +281,9 @@
                 </div>
             </div>
             
-            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="service-icon gradient-4">
-                    <i class="fas fa-cogs"></i>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="700">
+                <div class="service-icon gradient-2">
+                    <i class="fas fa-exchange-alt"></i>
                 </div>
                 <h3>Замена АКПП</h3>
                 <p>Полная замена автоматической коробки передач с гарантией</p>
@@ -486,8 +546,12 @@
 <div class="input-group">
     <select id="modalService">
         <option value="">Выберите услугу</option>
+        <option>Замена масла в АКПП</option>
+        <option>Ремонт роботизированных КПП</option>
+        <option>Ремонт коробок DSG</option>
+        <option>Ремонт АКПП</option>
+        <option>Ремонт вариаторов (CVT)</option>
         <option>Диагностика</option>
-        <option>Замена масла АКПП</option>
         <option>Адаптация сцепления WAG</option>
         <option>Замена АКПП</option>
     </select>

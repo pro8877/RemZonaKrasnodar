@@ -1759,3 +1759,150 @@ section {
         font-size: 0.9rem;
     }
 }
+
+/* ТОЛЬКО ДЛЯ ТЕЛЕФОНА */
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    .container {
+        padding: 0 15px !important;
+        width: 100% !important;
+    }
+    
+    .nav-container {
+        padding: 10px 15px !important;
+        width: 100% !important;
+    }
+    
+    .hero-content {
+        padding: 70px 15px 30px !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .hero-left {
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .hero-card {
+        width: 100% !important;
+        max-width: 350px !important;
+        margin: 0 auto !important;
+    }
+    
+    .services-grid,
+    .advantages-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+    
+    .service-card,
+    .advantage-card {
+        width: 100% !important;
+        max-width: 350px !important;
+        margin: 0 auto !important;
+    }
+    
+    .process-timeline {
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 0 !important;
+    }
+    
+    .contacts-grid {
+        flex-direction: column !important;
+        padding: 0 !important;
+    }
+    
+    .contact-map iframe {
+        width: 100% !important;
+        height: 300px !important;
+    }
+    
+    .footer-content {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+}
+
+/* Убираем горизонтальную прокрутку */
+html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Все элементы не выходят за пределы экрана */
+section,
+div,
+header,
+footer,
+nav,
+.container,
+.hero,
+.services,
+.advantages,
+.process,
+.reviews,
+.contacts,
+.cta {
+    max-width: 100vw !important;
+}
+
+/* Исправление заголовков секций на телефоне */
+@media screen and (max-width: 768px) {
+    .section-header {
+        padding: 0 15px !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .section-title {
+        font-size: 1.6rem !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        white-space: normal !important;
+    }
+    
+    .section-description {
+        font-size: 0.95rem !important;
+        padding: 0 10px !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section-title {
+        font-size: 1.4rem !important;
+        line-height: 1.4 !important;
+        letter-spacing: -0.5px !important;
+        word-break: normal !important;
+        hyphens: none !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .section-title {
+        font-size: 1.2rem !important;
+    }
+}

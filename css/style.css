@@ -1906,3 +1906,41 @@ nav,
         font-size: 1.2rem !important;
     }
 }
+
+/* Фикс карточек услуг на десктопе */
+.services-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+.service-card {
+    width: 300px !important;
+    max-width: 300px !important;
+    min-width: 300px !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    transform: none !important;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* Убираем подпрыгивание при наведении */
+.service-card:hover {
+    transform: none !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12) !important;
+    border-color: var(--primary-light) !important;
+}
+
+/* Кнопка не дёргается */
+.service-link {
+    transition: color 0.3s ease !important;
+    gap: 5px !important;
+}
+
+.service-link:hover {
+    gap: 5px !important;
+    color: var(--primary-dark) !important;
+}

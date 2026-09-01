@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RemZona - Ремонт АКПП в Краснодаре | Современный сервис</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ВАШ_API_КЛЮЧ&lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+
+    <div class="cursor-glow"></div>
+    
+
+    <div class="preloader" id="preloader">
+        <div class="loader-content">
+            <div class="loader-gear">
+                <i class="fas fa-cog"></i>
+            </div>
+            <div class="loader-text">RemZona</div>
+            <div class="loader-progress">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+<div class="nav-logo" onclick="scrollToTop()">
+    <img src="images/logo.png" alt="ГидроТех" class="logo-horizontal">
+                <div class="logo-text">
+                    <span class="logo-title">REM ZONA</span>
+                    <span class="logo-subtitle">АКПП Сервис</span>
+                </div>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active">Главная</a></li>
+                <li><a href="#services" class="nav-link">Услуги</a></li>
+                <li><a href="#advantages" class="nav-link">Преимущества</a></li>
+                <li><a href="#process" class="nav-link">Процесс</a></li>
+                <li><a href="#reviews" class="nav-link">Отзывы</a></li>
+                <li><a href="#contacts" class="nav-link">Контакты</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="tel:+79882456789" class="nav-phone">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+7 (929) 825-35-74</span>
+                </a>
+                <button class="btn-gradient" onclick="openModal()">
+                    <span>Записаться</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient-1"></div>
+            <div class="hero-gradient-2"></div>
+            <div class="hero-particles"></div>
+        </div>
+        
+        <div class="container hero-content">
+            <div class="hero-left">
+                <div class="hero-badge glass-effect">
+                    <span class="pulse-dot"></span>
+                    Работаем с 2017 года
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="gradient-text">Ремонт АКПП</span>
+                    <br>нового поколения
+                </h1>
+                
+                <p class="hero-description">
+                    Инновационный подход к ремонту автомобилей. 
+                    Используем только оригинальные запчасти и даём гарантию до 12 месяцев или 30.000 км.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-mini">
+                        <span class="stat-value">4.9</span>
+                        <span class="stat-label">★ Рейтинг</span>
+                    </div>
+                    <div class="stat-mini">
+                        <span class="stat-value">5000+</span>
+                        <span class="stat-label">Клиентов</span>
+                    </div>
+                    <div class="stat-mini">
+                        <span class="stat-value">24/7</span>
+                        <span class="stat-label">Поддержка</span>
+                    </div>
+                </div>
+                
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="openModal()">
+                        <span>Бесплатная диагностика</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <a href="#services" class="btn-outline">
+                        <span>Наши услуги</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-right">
+                <div class="hero-card glass-effect">
+                    <div class="card-header">
+                        <h3>Запись на диагностику</h3>
+                        <span class="card-badge">Бесплатно</span>
+                    </div>
+                    
+                    <form id="heroForm" class="modern-form">
+                        <div class="input-group">
+                            <input type="text" id="heroName" required>
+                            <label>Ваше имя</label>
+                            <span class="input-icon"><i class="fas fa-user"></i></span>
+                        </div>
+                        
+                        <div class="input-group">
+                            <input type="tel" id="heroPhone" required>
+                            <label>Телефон</label>
+                            <span class="input-icon"><i class="fas fa-phone"></i></span>
+                        </div>
+                        
+<div class="input-group">
+    <select id="heroService">
+        <option value="">Выберите услугу</option>
+        <option>Диагностика</option>
+        <option>Замена масла АКПП</option>
+        <option>Адаптация сцепления WAG</option>
+        <option>Замена АКПП</option>
+    </select>
+    <span class="input-icon"><i class="fas fa-wrench"></i></span>
+</div>
+                        
+                        <button type="submit" class="btn-submit-modern">
+                            <span>Отправить заявку</span>
+                            <div class="btn-shine"></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Листайте вниз</span>
+        </div>
+    </section>
+
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Наши услуги</span>
+            <h2 class="section-title">Профессиональный <span class="gradient-text">ремонт АКПП</span></h2>
+            <p class="section-description">Полный спектр услуг по диагностике и ремонту автоматических коробок передач</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up">
+                <div class="service-icon gradient-1">
+                    <i class="fas fa-microscope"></i>
+                </div>
+                <h3>Диагностика</h3>
+                <p>Компьютерная диагностика АКПП с использованием профессионального оборудования</p>
+                <div class="service-footer">
+                    <span class="price">от 1 000 ₽</span>
+                    <button class="service-link" onclick="openModal('Диагностика')">
+                        Записаться <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="service-card featured" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon gradient-2">
+                    <i class="fas fa-oil-can"></i>
+                </div>
+                <h3>Замена масла АКПП</h3>
+                <p>Полная или частичная замена трансмиссионной жидкости с фильтром</p>
+                <div class="service-footer">
+                    <span class="price">от 1 500 ₽</span>
+                    <button class="service-link" onclick="openModal('Замена масла АКПП')">
+                        Записаться <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <span class="featured-badge">Популярно</span>
+            </div>
+            
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon gradient-3">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <h3>Адаптация сцепления WAG</h3>
+                <p>Профессиональная адаптация сцепления для роботизированных коробок</p>
+                <div class="service-footer">
+                    <span class="price">от 3 500 ₽</span>
+                    <button class="service-link" onclick="openModal('Адаптация сцепления WAG')">
+                        Записаться <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon gradient-4">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Замена АКПП</h3>
+                <p>Полная замена автоматической коробки передач с гарантией</p>
+                <div class="service-footer">
+                    <span class="price">от 20 000 ₽</span>
+                    <button class="service-link" onclick="openModal('Замена АКПП')">
+                        Записаться <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="advantages" id="advantages">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Почему мы</span>
+                <h2 class="section-title">Наши <span class="gradient-text">преимущества</span></h2>
+            </div>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card glass-effect" data-aos="fade-right">
+                    <div class="advantage-number">01</div>
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Гарантия 12 месяцов либо 30.000 км</h3>
+                    <p>Предоставляем гарантию на все виды работ</p>
+                </div>
+                
+                <div class="advantage-card glass-effect" data-aos="fade-right" data-aos-delay="100">
+                    <div class="advantage-number">02</div>
+                    <i class="fas fa-clock"></i>
+                    <h3>Быстрый ремонт</h3>
+                    <p>90% автомобилей возвращаем владельцам в течение 2-5 дней</p>
+                </div>
+                
+                <div class="advantage-card glass-effect" data-aos="fade-right" data-aos-delay="200">
+                    <div class="advantage-number">03</div>
+                    <i class="fas fa-certificate"></i>
+                    <h3>Оригинальные запчасти</h3>
+                    <p>Используем только сертифицированные комплектующие и масла</p>
+                </div>
+                
+                <div class="advantage-card glass-effect" data-aos="fade-right" data-aos-delay="300">
+                    <div class="advantage-number">04</div>
+                    <i class="fas fa-ruble-sign"></i>
+                    <h3>Прозрачные цены</h3>
+                    <p>Согласовываем стоимость до начала ремонта, без скрытых доплат</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Как мы работаем</span>
+                <h2 class="section-title">Процесс <span class="gradient-text">ремонта</span></h2>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-line"></div>
+                
+                <div class="process-step" data-aos="zoom-in">
+                    <div class="step-circle">1</div>
+                    <h3>Заявка</h3>
+                    <p>Оставляете заявку на сайте или звоните нам</p>
+                </div>
+                
+                <div class="process-step" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="step-circle">2</div>
+                    <h3>Диагностика</h3>
+                    <p>Проводим компьютерную диагностику АКПП</p>
+                </div>
+                
+                <div class="process-step" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="step-circle">3</div>
+                    <h3>Согласование</h3>
+                    <p>Обсуждаем стоимость и сроки ремонта</p>
+                </div>
+                
+                <div class="process-step" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="step-circle">4</div>
+                    <h3>Ремонт</h3>
+                    <p>Выполняем все необходимые работы</p>
+                </div>
+                
+                <div class="process-step" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="step-circle">5</div>
+                    <h3>Выдача</h3>
+                    <p>Тестируем и выдаём автомобиль с гарантией</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Отзывы</span>
+                <h2 class="section-title">Что говорят <span class="gradient-text">клиенты</span></h2>
+            </div>
+            
+            <div class="reviews-slider-wrapper">
+                <div class="reviews-slider">
+                    <div class="reviews-track" id="reviewsTrack">
+
+                    </div>
+                    
+                    <button class="slider-arrow prev" onclick="moveSlider(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-arrow next" onclick="moveSlider(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="slider-dots" id="sliderDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content glass-effect">
+                <h2>Готовы отремонтировать <span class="gradient-text">вашу АКПП?</span></h2>
+                <p>Получите бесплатную консультацию специалиста прямо сейчас</p>
+                <button class="btn-primary" onclick="openModal()">
+                    <span>Получить консультацию</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <div class="contacts-grid">
+                <div class="contact-info">
+                    <div class="section-header left">
+                        <span class="section-tag">Контакты</span>
+                        <h2 class="section-title">Свяжитесь <span class="gradient-text">с нами</span></h2>
+                    </div>
+                    
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Адрес</h4>
+                                <p>г. Краснодар, ул. Бершанской 345/6</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Телефон</h4>
+                                <p>+7 (929) 825-35-74</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>remzona.akpp@yandex.ru</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Режим работы</h4>
+                                <p>Ежедневно с 10:00 до 19:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://wa.me/79298253574" class="social-link whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://t.me/ANAMATAPEYA79" class="social-link telegram" target="_blank">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+<div class="contact-map">
+    <iframe 
+        src="https://yandex.ru/map-widget/v1/?text=г.%20Краснодар%2C%20ул.%20Бершанской%20345%2F6&z=16" 
+        width="100%" 
+        height="500" 
+        frameborder="0"
+        allowfullscreen="true"
+        style="border: none; border-radius: 16px; position: relative;">
+    </iframe>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-gradient">
+                        <span>RZ</span>
+                    </div>
+                    <div>
+                        <h3>REM ZONA</h3>
+                        <p>Профессиональный ремонт</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#services">Услуги</a>
+                    <a href="#advantages">Преимущества</a>
+                    <a href="#process">Процесс</a>
+                    <a href="#reviews">Отзывы</a>
+                </div>
+                
+                <div class="footer-copy">
+                    <p>© 2026 REM ZONA. Все права защищены.</p>
+                    <p>Разработано в Краснодаре</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="modal">
+        <div class="modal-content glass-effect">
+            <button class="modal-close" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <h3 id="modalTitle">Записаться на ремонт</h3>
+            
+            <form id="modalForm" class="modern-form">
+                <div class="input-group">
+                    <input type="text" id="modalName" required>
+                    <label>Ваше имя</label>
+                    <span class="input-icon"><i class="fas fa-user"></i></span>
+                </div>
+                
+                <div class="input-group">
+                    <input type="tel" id="modalPhone" required>
+                    <label>Телефон</label>
+                    <span class="input-icon"><i class="fas fa-phone"></i></span>
+                </div>
+                
+<div class="input-group">
+    <select id="modalService">
+        <option value="">Выберите услугу</option>
+        <option>Диагностика</option>
+        <option>Замена масла АКПП</option>
+        <option>Адаптация сцепления WAG</option>
+        <option>Замена АКПП</option>
+    </select>
+    <span class="input-icon"><i class="fas fa-wrench"></i></span>
+</div>
+                
+                <button type="submit" class="btn-submit-modern">
+                    <span>Отправить</span>
+                    <div class="btn-shine"></div>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>Заявка успешно отправлена!</span>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
